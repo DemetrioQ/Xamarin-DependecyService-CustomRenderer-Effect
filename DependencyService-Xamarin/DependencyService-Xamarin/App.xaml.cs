@@ -16,13 +16,16 @@ namespace DependencyService_Xamarin
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync($"/{Config.MainPage}");
+            await NavigationService.NavigateAsync($"/{Config.MainTabbedPage}");
 
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainTabbedPage>(Config.MainTabbedPage);
             containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(Config.MainPage);
+
+
         }
     }
 }

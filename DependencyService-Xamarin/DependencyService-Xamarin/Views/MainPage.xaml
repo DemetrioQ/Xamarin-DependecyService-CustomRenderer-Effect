@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DependencyService_Xamarin.Views.MainPage">
+             x:Class="DependencyService_Xamarin.Views.MainPage"
+             xmlns:local="clr-namespace:DependencyService_Xamarin.Controls"
+             xmlns:effects="clr-namespace:DependencyService_Xamarin.Effects">
 
     <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Button Text="Get Orientation"  Command="{Binding GetCommand}"></Button>
         <Label Text="{Binding Orientation}"></Label>
+        <local:CustomEntry Text="My Custom Entry">
+            <local:CustomEntry.Effects>
+                <effects:FocusEffect></effects:FocusEffect>
+            </local:CustomEntry.Effects>
+        </local:CustomEntry>
     </StackLayout>
 
 </ContentPage>
