@@ -1,4 +1,4 @@
-# Xamarin DependecyService CustomRenderer Effects
+# Xamarin Dependecy Service, Custom Rendereres, Effects
 Plataform Specifics used:
   - [TabbedPage Toolbar Placement and Color on Android](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color)
   - [TabbedPage Page Swiping on Android](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/android/tabbedpage-page-swiping)
