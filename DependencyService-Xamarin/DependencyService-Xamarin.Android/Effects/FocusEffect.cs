@@ -18,11 +18,20 @@ namespace DependencyService_Xamarin.Droid.Effects
 {
     public class FocusEffect : PlatformEffect
     {
-        Android.Graphics.Color originalBackgroundColor = new Android.Graphics.Color(0, 0, 0, 0);
+        Android.Graphics.Color originalBackgroundColor = Color.Gray.ToAndroid();
         Android.Graphics.Color backgroundColor;
 
         protected override void OnAttached()
         {
+            try
+            {
+                backgroundColor = Android.Graphics.Color.LightGreen;
+                Control.SetBackgroundColor(backgroundColor);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot set property on attached control. Error: ", ex.Message);
+            }
         }
 
         protected override void OnDetached()
@@ -42,7 +51,6 @@ namespace DependencyService_Xamarin.Droid.Effects
                     }
                     else
                     {
-                        backgroundColor = Config.BackgroundColor.ToAndroid();
                         Control.SetBackgroundColor(backgroundColor);
                     }
                 }

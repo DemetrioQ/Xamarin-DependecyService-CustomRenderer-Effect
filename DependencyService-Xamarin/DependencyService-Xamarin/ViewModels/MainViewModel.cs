@@ -13,7 +13,6 @@ namespace DependencyService_Xamarin.ViewModels
     {
         IDeviceOrientationService DeviceOrientationService;
         public ICommand GetCommand { get; }
-        DeviceOrientation deviceOrientation { get; set; }
         public string Orientation { get; set; }
 
         public MainViewModel(IDeviceOrientationService deviceOrientationService, IPageDialogService pageDialogService) : base(pageDialogService)
@@ -23,7 +22,7 @@ namespace DependencyService_Xamarin.ViewModels
         }
         public void OnGet()
         {
-            deviceOrientation = DeviceOrientationService.GetOrientation();
+            DeviceOrientation deviceOrientation = DeviceOrientationService.GetOrientation();
             Orientation = deviceOrientation.ToString();
         }
 
